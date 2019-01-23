@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cast } from '../cast';
 import { CASTINGS } from '../mock-cast';
+import { CastService } from '../cast.service';
 
 
 @Component({
@@ -9,15 +10,20 @@ import { CASTINGS } from '../mock-cast';
   styleUrls: ['./cast.component.css']
 })
 export class CastComponent implements OnInit {
-  title = 'Castings List';
-  castings = CASTINGS;
+  title = 'Castings Lists';
+  castings: Cast[];
   selectedCast: Cast;
   onSelect(cast: Cast): void {
     this.selectedCast = cast;
   }
-  constructor() { }
+  constructor(private castService: CastService) { }
 
   ngOnInit() {
+    this.getCastings();
+  }
+
+  getCastings(): void {
+    this.castService.getCastings().subscribe(castings => this.castings = castings);
   }
 
 }
