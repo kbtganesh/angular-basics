@@ -27,6 +27,10 @@ export class CastDetailsComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
+    save(): void {
+        this.castService.updateCast(this.cast)
+            .subscribe(() => this.goBack());
+    }
     constructor(
         private route: ActivatedRoute,
         private castService: CastService,
