@@ -17,4 +17,9 @@ export class CastService {
     this.messageService.add('HeroService: fetched heroes');
     return of(CASTINGS);
   }
+
+  getCast(id: number): Observable<Cast> {
+    this.messageService.add(`HeroService: fetched hero id - ${id}`);
+    return of(CASTINGS.find(c => c.id === id));
+  }
 }

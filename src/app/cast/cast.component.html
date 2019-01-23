@@ -2,10 +2,12 @@
   {{title}}
   <h1>{{test}}</h1>
   <div [className]="'list-wrapper'" *ngFor="let cast of castings" [class.selected]="cast === selectedCast">
-    <div [className] = "'list-item'" (click)="onSelect(cast)">
+    <a [className]="'list-item'" routerLink="/detail/{{cast.id}}">
+      <div>
         {{cast.id}}: {{cast.name}}
-    </div>
+      </div>
+    </a>
   </div>
-  <app-cast-detail [cast]="selectedCast"></app-cast-detail>
+  <!-- <app-cast-detail [cast]="selectedCast"></app-cast-detail> -->
   <!-- <input [(ngModel)]="heros.name" placeholder="Name"> -->
 </div>

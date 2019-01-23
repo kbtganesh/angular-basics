@@ -12,10 +12,10 @@ import { CastService } from '../cast.service';
 export class CastComponent implements OnInit {
   title = 'Castings Lists';
   castings: Cast[];
-  selectedCast: Cast;
-  onSelect(cast: Cast): void {
-    this.selectedCast = cast;
-  }
+  // selectedCast: Cast;
+  // onSelect(cast: Cast): void {
+  //   this.selectedCast = cast;
+  // }
   constructor(private castService: CastService) { }
 
   ngOnInit() {
