@@ -1,0 +1,14 @@
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.selected .list-item{
+    background: lightblue;
+}
+
+.list-item {
+    width: 20%;
+    border: 1px solid lightgray;
+    padding: 8px;
+}

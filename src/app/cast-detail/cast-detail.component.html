@@ -1,0 +1,9 @@
+<div *ngIf="cast">
+    <h2>{{cast.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{cast.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="cast.name" placeholder="name">
+        </label>
+    </div>
+</div>
