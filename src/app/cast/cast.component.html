@@ -1,12 +1,24 @@
 <div>
   {{title}}
   <h1>{{test}}</h1>
+  <div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
   <div [className]="'list-wrapper'" *ngFor="let cast of castings" [class.selected]="cast === selectedCast">
     <a [className]="'list-item'" routerLink="/detail/{{cast.id}}">
       <div>
-        {{cast.id}}: {{cast.name}}
+        <span>
+          {{cast.id}}: {{cast.name}}
+        </span>
       </div>
     </a>
+    <button class="delete" (click)="delete(cast)">x</button>
   </div>
   <!-- <app-cast-detail [cast]="selectedCast"></app-cast-detail> -->
   <!-- <input [(ngModel)]="heros.name" placeholder="Name"> -->
