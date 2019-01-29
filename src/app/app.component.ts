@@ -11,9 +11,8 @@ import { Component } from '@angular/core';
       <input type="radio" name="colors" (click)="color='yellow'">Yellow
       <input type="radio" name="colors" (click)="color='cyan'">Cyan
     </div>
-    <p appHighlight>Highlight me!</p>
     <p [appHighlight]="color" [highlightColor2]="'orange'">Highlighted with color var</p>
-    <p appHighlight [highlightColor2]="'orange'">Highlighted in orange</p>
+    <app-power-booster></app-power-booster>
     `
 })
 export class AppComponent {

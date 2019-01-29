@@ -13,10 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HighlightDirective } from './highlight.directive';
+import { PowerBoosterComponent } from './power-booster.component';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    PowerBoosterComponent,
+    ExponentialStrengthPipe,
     CastComponent,
     CastDetailsComponent,
     MessagesComponent,
